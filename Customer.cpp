@@ -14,7 +14,7 @@ string Customer::getPhoneNumber() {
 }
 
 // Setter
-void Customer::setAccountBalance(float Monney) {
+void Customer::setAccountBalance(float monney) {
 	_accountBalance = Monney;
 }
 void Customer::setNameCustomer(string nameCustomer) {
@@ -22,4 +22,11 @@ void Customer::setNameCustomer(string nameCustomer) {
 }
 void Customer::setPhoneNumber(string phoneNumber) {
 	_phoneNumber = phoneNumber;
+}
+
+
+// Method for customer
+
+void Customer::pay(float monney){
+	
 }

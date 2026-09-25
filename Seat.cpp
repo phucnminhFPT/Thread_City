@@ -5,7 +5,7 @@
 Seat::Seat() {
 	_seatID = "";
 	_seatClass = "";
-	_status = "A";		// Avaible
+	_status = "A"; // Available
 	_seatPrice = 0.0;
 }
 
@@ -15,7 +15,6 @@ Seat::Seat(string seatID, string seatClass, string status, float seatPrice) {
 	_status = status;
 	_seatPrice = seatPrice;
 }
-
 
 // Getter
 string Seat::getSeatID() {
@@ -27,7 +26,7 @@ string Seat::getSeatClass() {
 	return _seatClass;
 }
 string Seat::getStatus() {
-	// A : avaible , O : orderded , P : Pending
+	// A : Available , O : Orderded , P : Pending
 	return _status;
 }
 float Seat::getSeatPrice() {

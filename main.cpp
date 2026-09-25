@@ -3,8 +3,7 @@
 #include "Movie.h"
 using namespace std;
 
-enum MenuChoice
-{
+enum MenuChoice {
 	DISPLAY_MOVIE_LIST = 1, // 1
 	DISPLAY_SEAT_MAP,		// 2
 	ORDER_SEAT,				// 3
@@ -24,8 +23,7 @@ enum MenuChoice
 };
 
 // Menu for customer choice
-void Menu()
-{
+void Menu() {
 	cout << "\n========== MOVIE THEATER ==========\n";
 
 	cout << "\n------------ MOVIE ----------------\n";
@@ -55,109 +53,110 @@ Movie movieList[4] = {
 	Movie("M01", "Avengers", "18:00"),
 	Movie("M02", "Superman", "19:30"),
 	Movie("M03", "Spider-Man", "21:00"),
-	Movie("M04", "Batman", "22:30")};
+	Movie("M04", "Batman", "22:30")
+};
 
-int main()
-{
-
+int main() {
+	SeatManagement sM;
+	sM.displaySeatMap();
 	int choice;
 
-	do
-	{
-		Menu();
+	// do
+	// {
+	// 	Menu();
 
-		cout << "\nEnter your choice: ";
-		cin >> choice;
+	// 	cout << "\nEnter your choice: ";
+	// 	cin >> choice;
 
-		switch (choice)
-		{
+	// 	switch (choice)
+	// 	{
 
-			/*------------ MOVIE ----------------*/
+	// 		/*------------ MOVIE ----------------*/
 
-		case DISPLAY_MOVIE_LIST: // 1. Display movie list
-			cout << "\n========== MOVIE LIST ==========\n";
+	// 	case DISPLAY_MOVIE_LIST: // 1. Display movie list
+	// 		cout << "\n========== MOVIE LIST ==========\n";
 
-			for (int i = 0; i < 4; i++)
-			{
-				cout << movieList[i].getMovieID() << " | "
-					 << movieList[i].getNameMovie() << " | "
-					 << movieList[i].getTime() << "\n";
-			}
+	// 		for (int i = 0; i < 4; i++)
+	// 		{
+	// 			cout << movieList[i].getMovieID() << " | "
+	// 				 << movieList[i].getNameMovie() << " | "
+	// 				 << movieList[i].getTime() << "\n";
+	// 		}
 
-			break;
+	// 		break;
 
-		case DISPLAY_SEAT_MAP: // 2. Display seatmap
-			seatManagement.displaySeatMap();
-			break;
+	// 	case DISPLAY_SEAT_MAP: // 2. Display seatmap
+	// 		seatManagement.displaySeatMap();
+	// 		break;
 
-		case ORDER_SEAT:
-		{ // 3. Order seat
-			string seatID;
+	// 	case ORDER_SEAT:
+	// 	{ // 3. Order seat
+	// 		string seatID;
 
-			cout << "Enter seat ID: ";
-			cin >> seatID;
+	// 		cout << "Enter seat ID: ";
+	// 		cin >> seatID;
 
-			seatManagement.orderSeat(seatID);
-			break;
-		}
+	// 		seatManagement.orderSeat(seatID);
+	// 		break;
+	// 	}
 
-		case CANCEL_SEAT:
-		{ // 4. Cancel seat
-			string seatID;
+	// 	case CANCEL_SEAT:
+	// 	{ // 4. Cancel seat
+	// 		string seatID;
 
-			cout << "Enter seat ID: ";
-			cin >> seatID;
+	// 		cout << "Enter seat ID: ";
+	// 		cin >> seatID;
 
-			seatManagement.cancelSeat(seatID);
-			break;
-		}
+	// 		seatManagement.cancelSeat(seatID);
+	// 		break;
+	// 	}
 
-			/*------------ PAYMENT --------------*/
+	// 		/*------------ PAYMENT --------------*/
 
-		case AWAITING_PAYMENT_LIST: // 5. Awaiting Payment List
-			cout << "Awaiting Payment List\n";
-			break;
+	// 	case AWAITING_PAYMENT_LIST: // 5. Awaiting Payment List
+	// 		cout << "Awaiting Payment List\n";
+	// 		break;
 
-		case PAYMENT_CONFIRMATION: // 6. Payment Confirmation
-			cout << "Payment Confirmation\n";
-			break;
+	// 	case PAYMENT_CONFIRMATION: // 6. Payment Confirmation
+	// 		cout << "Payment Confirmation\n";
+	// 		break;
 
-			/*------------ TICKET ---------------*/
+	// 		/*------------ TICKET ---------------*/
 
-		case PRINT_TICKET: // 7. Print Ticket
-			cout << "Print Ticket\n";
-			break;
+	// 	case PRINT_TICKET: // 7. Print Ticket
+	// 		cout << "Print Ticket\n";
+	// 		break;
 
-			/*------------ CUSTOMER -------------*/
+	// 		/*------------ CUSTOMER -------------*/
 
-		case CREATE_ACCOUNT: // 8. Create account
-			cout << "Create account\n";
-			break;
+	// 	case CREATE_ACCOUNT: // 8. Create account
+	// 		cout << "Create account\n";
+	// 		break;
 
-		case SHOW_CUSTOMER_INFORMATION: // 9. Show Customer Information
-			cout << "Show Customer Information\n";
-			break;
+	// 	case SHOW_CUSTOMER_INFORMATION: // 9. Show Customer Information
+	// 		cout << "Show Customer Information\n";
+	// 		break;
 
-		case SHOW_ACCOUNT_BALANCE: // 10. Show Account Balance
-			cout << "Show Account Balance\n";
-			break;
+	// 	case SHOW_ACCOUNT_BALANCE: // 10. Show Account Balance
+	// 		cout << "Show Account Balance\n";
+	// 		break;
 
-		case DEPOSIT_MONEY: // 11. Deposit Money
-			cout << "Deposit Money\n";
-			break;
+	// 	case DEPOSIT_MONEY: // 11. Deposit Money
+	// 		cout << "Deposit Money\n";
+	// 		break;
 
-			/*------------ EXIT -----------------*/
+	// 		/*------------ EXIT -----------------*/
 
-		case EXIT: // 12. Exit
-			cout << "Goodbye!\n";
-			break;
+	// 	case EXIT: // 12. Exit
+	// 		cout << "Goodbye!\n";
+	// 		break;
 
-		default:
-			cout << "Invalid choice!\n";
-			break;
-		}
+	// 	default:
+	// 		cout << "Invalid choice!\n";
+	// 		break;
+	// 	}
 
-	} while (choice != EXIT);
+	// } while (choice != EXIT);
 
 	return 0;
 }

@@ -5,28 +5,28 @@
 
 using namespace std;
 class Movie {
-	private :
+	private:
 		string _movieID;
 		string _nameMovie;
 		string _time;
-	public :
 
+	public:
 		Movie();
 		Movie(string movieID, string nameMovie, string time);
 
-		//setter
+		// setter
 		void setMovieID(string movieID);
 
 		void setNameMovie(string nameMovie);
 
 		void setTime(string time);
 
-		//getter
+		// getter
 
-		string getMovieID(string movieID);
+		string getMovieID();
 
-		string getNameMovie(string nameMovie);
+		string getNameMovie();
 
-		string getTime(string time);
+		string getTime();
 };
 #endif

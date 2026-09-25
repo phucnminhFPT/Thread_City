@@ -27,14 +27,14 @@ void Movie::setTime(string time) {
 }
 
 // Getter
-string Movie::getMovieID(string movieID) {
+string Movie::getMovieID() {
 	return _movieID;
 }
 
-string Movie::getNameMovie(string nameMovie) {
+string Movie::getNameMovie() {
 	return _nameMovie;
 }
 
-string Movie::getTime(string time) {
+string Movie::getTime() {
 	return _time;
 }
