@@ -11,9 +11,8 @@ class Customer {
 		string _phoneNumber; // Unique key
 
 	public:
-		// Constructor
+		// Constructor and deconstructor
 		Customer();
-		~Customer();
 
 		// Getter
 		float getAccountBalance();
@@ -26,8 +25,8 @@ class Customer {
 		void setPhoneNumber(string phoneNumber);
 
 		// Method
-		void deposit(float monney);		// Deposit monney from customer
-		void pay(float monney);			// Draw and pay from customer
+		void deposit(float monney); // Deposit monney from customer, Don't allow enter monney < 0
+		bool pay(float monney);		// Draw and pay from customer, Don't allow enter monney < 0
 };
 
 #endif

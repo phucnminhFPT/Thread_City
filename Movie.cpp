@@ -1,40 +1,54 @@
 #include "Movie.h"
 
 // Constructor
-Movie::Movie() {
+Movie::Movie()
+{
 	_movieID = "";
 	_nameMovie = "";
 	_time = "";
 }
 
-Movie::Movie(string movieID, string nameMovie, string time) {
+Movie::Movie(string movieID, string nameMovie, string time)
+{
 	_movieID = movieID;
 	_nameMovie = nameMovie;
 	_time = time;
 }
 
 // Setter
-void Movie::setMovieID(string movieID) {
+void Movie::setMovieID(string movieID)
+{
 	this->_movieID = movieID;
 }
 
-void Movie::setNameMovie(string nameMovie) {
+void Movie::setNameMovie(string nameMovie)
+{
 	this->_nameMovie = nameMovie;
 }
 
-void Movie::setTime(string time) {
+void Movie::setTime(string time)
+{
 	this->_time = time;
 }
 
 // Getter
-string Movie::getMovieID() {
+string Movie::getMovieID()
+{
 	return _movieID;
 }
 
-string Movie::getNameMovie() {
+string Movie::getNameMovie()
+{
 	return _nameMovie;
 }
 
-string Movie::getTime() {
+string Movie::getTime()
+{
 	return _time;
+}
+
+// Return SeatManagement of this movie
+SeatManagement &Movie::getSeatManagement()
+{
+	return _seatManagement;
 }
