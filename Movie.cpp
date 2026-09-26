@@ -18,17 +18,17 @@ Movie::Movie(string movieID, string nameMovie, string time)
 // Setter
 void Movie::setMovieID(string movieID)
 {
-	this->_movieID = movieID;
+	_movieID = movieID;
 }
 
 void Movie::setNameMovie(string nameMovie)
 {
-	this->_nameMovie = nameMovie;
+	_nameMovie = nameMovie;
 }
 
 void Movie::setTime(string time)
 {
-	this->_time = time;
+	_time = time;
 }
 
 // Getter
@@ -47,7 +47,7 @@ string Movie::getTime()
 	return _time;
 }
 
-// Return SeatManagement of this movie
+// Get SeatManagement of this movie
 SeatManagement &Movie::getSeatManagement()
 {
 	return _seatManagement;

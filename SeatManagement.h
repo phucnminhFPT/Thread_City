@@ -4,41 +4,76 @@
 #include <unordered_map>
 #include "Seat.h"
 #include "Customer.h"
+
 using namespace std;
 
-class SeatManagement {
-	private:
-		// Hash Map
-		unordered_map<string, Seat> _seats; // string = key , Seat = Infor seat
+class SeatManagement
+{
+private:
+	/*
+		=========================
+		HASH MAP
+		"A1" -> Seat("A1", "Normal", "A", 100)
+	*/
+	unordered_map<string, Seat> _seats;
 
-		/*
-			SINGLY LINKED LIST
-			Waiting for payment
-		*/
-		struct Node {
-			Customer customer;
-			string seatID;
-			Node *next;
+	/*
+		=========================
+		SINGLY LINKED LIST
+		=========================
+		Waiting for payment
 
-			Node(Customer customer, string seatID) {
-				this->customer = customer;
-				this->seatID = seatID;
-				this->next = nullptr;
-			}
-		};
+		Each Node stores:
+		- Customer
+		- Movie ID
+		- Seat ID
+		- Next node
+	*/
+	struct Node
+	{
+		Customer customer;
+		string movieID;
+		string seatID;
 
-		Node *headWaitList;
-		Node *tailWaitList;
+		Node *next;
 
-	public:
-		// Helper functions
-		void initSeatsMap_HashMap(); // Init seat map
-		void displaySeatMap();
+		// Auto fill infor when it is called
+		Node(Customer customer, string movieID, string seatID)
+		{
+			this->customer = customer;
+			this->movieID = movieID;
+			this->seatID = seatID;
+			this->next = nullptr;
+		}
+	};
 
-		// Constructor
-		SeatManagement();
+	Node *headWaitList;
+	Node *tailWaitList;
 
-		// Deconstructor
-		~SeatManagement();
+public:
+	// Constructor
+	SeatManagement();
+
+	// Destructor
+	~SeatManagement();
+
+	// Initialize seat Hash Map
+	void initSeatsMap_HashMap();
+
+	// Display seat map
+	void displaySeatMap();
+
+	// Order seat
+	bool orderSeat(string seatID);
+
+	// Cancel seat
+	bool cancelSeat(string seatID);
+
+	// Add customer to waiting payment list
+	bool addToWaitList(Customer customer, string movieID, string seatID);
+
+	// Display waiting payment list
+	void displayWaitList();
 };
+
 #endif
